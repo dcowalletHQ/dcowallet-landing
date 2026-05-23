@@ -27,28 +27,34 @@
 
   <section class="roi">
     <h2>ROI Models</h2>
-    <div class="chart-placeholder">ROI Chart Placeholder</div>
-    <!-- Add this inside your ROI section -->
+    <div class="<!-- ROI Chart Section -->
+<h2>ROI Models</h2>
 <canvas id="roiChart" width="400" height="200"></canvas>
 
+<!-- Load Chart.js -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
 const ctx = document.getElementById('roiChart').getContext('2d');
-const roiChart = new Chart(ctx, {
+new Chart(ctx, {
     type: 'line',
     data: {
         labels: ['Month 1', 'Month 2', 'Month 3', 'Month 4'],
-        datasets: [{
-            label: 'UNIQ Staking Rewards',
-            data: [5, 10, 15, 25],
-            borderColor: 'rgba(75, 192, 192, 1)',
-            fill: false
-        },{
-            label: 'Remittance Discounts',
-            data: [2, 4, 6, 8],
-            borderColor: 'rgba(255, 99, 132, 1)',
-            fill: false
-        }]
+        datasets: [
+            {
+                label: 'UNIQ Staking Rewards',
+                data: [5, 10, 15, 25],
+                borderColor: 'rgba(75, 192, 192, 1)',
+                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                fill: true
+            },
+            {
+                label: 'Remittance Discounts',
+                data: [2, 4, 6, 8],
+                borderColor: 'rgba(255, 99, 132, 1)',
+                backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                fill: true
+            }
+        ]
     },
     options: {
         responsive: true,
@@ -61,6 +67,7 @@ const roiChart = new Chart(ctx, {
     }
 });
 </script>
+
 
     <p>UNIQ staking rewards and remittance discounts displayed here.</p>
   </section>
